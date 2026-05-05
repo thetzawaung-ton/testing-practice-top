@@ -1,0 +1,26 @@
+{
+  "name": "testing-practice-top",
+  "version": "1.0.0",
+  "description": "Testing practice exercise from The Odin Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thetzawaung-ton/testing-practice-top.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/thetzawaung-ton/testing-practice-top/issues"
+  },
+  "homepage": "https://github.com/thetzawaung-ton/testing-practice-top#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.29.3",
+    "jest": "^30.3.0"
+  }
+}
