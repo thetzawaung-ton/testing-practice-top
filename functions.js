@@ -53,3 +53,13 @@ export const caesarCipher = (text, shift) => {
     })
     return caesarArray.join("");
 }
+
+export const analyzeArray = (array) => {
+    const average = (array) => array.reduce((prev, cur) => prev + cur, 0) / array.length;
+
+    const min = (array) => array.reduce((prev, cur) => cur < prev ? cur : prev, array[0]);
+
+    const max = (array) => array.reduce((prev, cur) => cur > prev ? cur : prev, array[0]);
+
+    return {average: average(array), min: min(array), max: max(array), length: array.length};
+}
