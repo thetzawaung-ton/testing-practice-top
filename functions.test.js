@@ -1,4 +1,4 @@
-import { capitalizeString, reverseString, calculator } from "./functions.js";
+import { capitalizeString, reverseString, calculator, caesarCipher } from "./functions.js";
 
 test('Capitalize first character & reverse the string', () => {
     const testCases = [
@@ -25,5 +25,19 @@ test('Calculator object', () => {
         expect(calculator.substract(t.firstNum, t.secondNum)).toBeCloseTo(t.substractResult);
         expect(calculator.multiply(t.firstNum, t.secondNum)).toBeCloseTo(t.multiplyResult);
         expect(calculator.divide(t.firstNum, t.secondNum)).toBeCloseTo(t.divideResult);
+    })
+})
+
+test('Caesar cipher', () => {
+    const testCases = [
+        {text: "abcd", shift: 3, expectedResult: "defg"},
+        {text: "xyz", shift: 2, expectedResult: "zab"},
+        {text: "Abcd e", shift: 1, expectedResult: "Bcde f"},
+        {text: "CD e", shift: 2, expectedResult: "EF g"},
+        {text: "abC", shift: -3, expectedResult: "xyZ"}
+    ]
+
+    testCases.forEach(t => {
+        expect(caesarCipher(t.text, t.shift)).toMatch(t.expectedResult);
     })
 })

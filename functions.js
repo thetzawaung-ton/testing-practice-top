@@ -22,3 +22,34 @@ class Calculator {
 }
 
 export const calculator = new Calculator;
+
+export const caesarCipher = (text, shift) => {
+    const caesarArray = [];
+    const smallAlphabets = "abcdefghijklmnopqrstuvwxyz".split('');
+    const capitalAlphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+    const textArray = text.split('');
+    let caesarText;
+    textArray.forEach(str => {
+        function changeToCaesar(index) {
+            caesarText = index + shift;
+            if(caesarText >= 26) {
+                caesarText = caesarText - 26;
+            } else if (caesarText < 0) {
+                caesarText = caesarText + 26;
+            }
+            return caesarText;
+        }
+        if(smallAlphabets.includes(str)) {
+            const smallIndex = smallAlphabets.indexOf(str);
+            changeToCaesar(smallIndex);
+            caesarArray.push(smallAlphabets[caesarText]);
+        } else if(capitalAlphabets.includes(str)) {
+            const capitalIndex = capitalAlphabets.indexOf(str);
+            changeToCaesar(capitalIndex);
+            caesarArray.push(capitalAlphabets[caesarText]);
+        } else {
+            caesarArray.push(str);
+        }
+    })
+    return caesarArray.join("");
+}
