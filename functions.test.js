@@ -34,7 +34,8 @@ test('Caesar cipher', () => {
         {text: "xyz", shift: 2, expectedResult: "zab"},
         {text: "Abcd e", shift: 1, expectedResult: "Bcde f"},
         {text: "CD e", shift: 2, expectedResult: "EF g"},
-        {text: "abC", shift: -3, expectedResult: "xyZ"}
+        {text: "abC", shift: -3, expectedResult: "xyZ"},
+        {text: "abc", shift: 53, expectedResult: "bcd"}
     ]
 
     testCases.forEach(t => {

@@ -33,7 +33,7 @@ export const caesarCipher = (text, shift) => {
         function changeToCaesar(index) {
             caesarText = index + shift;
             if(caesarText >= 26) {
-                caesarText = caesarText - 26;
+                caesarText = caesarText % 26;
             } else if (caesarText < 0) {
                 caesarText = caesarText + 26;
             }
